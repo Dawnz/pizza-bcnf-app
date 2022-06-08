@@ -1,0 +1,13 @@
+mat-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 50%;
+  margin: auto;
+  padding: 20px;
+}
+
+.order-wrapper mat-input {
+  width: 100%;
+}

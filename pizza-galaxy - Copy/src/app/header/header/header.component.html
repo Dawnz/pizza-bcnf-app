@@ -1,0 +1,58 @@
+<section class="container">
+  <div class="menu-wraper">
+    <ul class="menu-bar">
+      <li><a routerLink="/">Home</a></li>
+      <li>
+        <a routerLink="/order" *ngIf="auth.isLoggedIn$ | async"
+          >Create an Order</a
+        >
+      </li>
+      <li>
+        <a routerLink="/receipt" *ngIf="auth.isLoggedIn$ | async"
+          >View Order History</a
+        >
+      </li>
+    </ul>
+  </div>
+
+  <div class="login">
+    <div class="login-buttons">
+      <button
+        mat-raised-button
+        color="secondary"
+        routerLink="/login"
+        class="login-btn"
+        *ngIf="auth.isLoggedOut$ | async"
+      >
+        Login
+      </button>
+      <button
+        mat-raised-button
+        color="secondary"
+        (click)="logout()"
+        class="logout-btn"
+        *ngIf="auth.isLoggedIn$ | async"
+      >
+        Logout
+      </button>
+      <button
+        mat-raised-button
+        color="secondary"
+        routerLink="/signup"
+        class="signin-btn"
+        *ngIf="auth.isLoggedOut$ | async"
+      >
+        Sign Up
+      </button>
+    </div>
+    <div class="user-info">
+      <div class="user-name" *ngIf="auth.isLoggedIn$ | async">
+        Hello, {{ username }}
+      </div>
+      <div class="user-name" *ngIf="auth.isLoggedOut$ | async">
+        Hello, Guest
+      </div>
+      <div class="user-icon"></div>
+    </div>
+  </div>
+</section>

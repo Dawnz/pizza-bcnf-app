@@ -1,0 +1,13 @@
+.signup-form {
+  display: grid;
+}
+.signup-page {
+  margin-top: 100px;
+}
+.signup-page mat-card-title {
+  text-align: center;
+}
+mat-card {
+  max-width: 50%;
+  margin: auto;
+}

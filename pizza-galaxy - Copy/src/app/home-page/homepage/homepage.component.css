@@ -1,0 +1,14 @@
+.title {
+  padding: 20px 0;
+  text-align: center;
+}
+.main-options {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 30px;
+  padding: 0 30px;
+  height: 40px;
+}
+.main-wrapper {
+  text-align: center;
+}

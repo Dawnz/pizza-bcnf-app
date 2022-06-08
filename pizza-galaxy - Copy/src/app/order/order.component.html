@@ -1,0 +1,59 @@
+<!-- <app-homepage></app-homepage> -->
+
+<mat-card class="order-container">
+  <mat-card-title>Place your Order</mat-card-title>
+  <br />
+  <mat-card-subtitle>Select your Cheese Topping</mat-card-subtitle>
+  <ng-form class="order-wrapper" [formGroup]="orderForm">
+    <mat-form-field appearance="fill">
+      <mat-label>Select Topping 1</mat-label>
+      <mat-select formControlName="option1" required>
+        <ng-container *ngFor="let topping of toppings; let i = index">
+          <mat-option
+            value="{{ topping.id }}"
+            *ngIf="topping.topping_type_id === 1"
+            >{{ topping.name }}</mat-option
+          >
+        </ng-container>
+        <!-- <mat-option value="two">Second option</mat-option> -->
+      </mat-select>
+    </mat-form-field>
+
+    <mat-card-subtitle>Select your Meat Topping</mat-card-subtitle>
+    <mat-form-field appearance="fill">
+      <mat-label>Select Topping 2</mat-label>
+      <mat-select formControlName="option2" required>
+        <ng-container *ngFor="let topping of toppings; let i = index">
+          <mat-option
+            value="{{ topping.id }}"
+            *ngIf="topping.topping_type_id === 2"
+            >{{ topping.name }}</mat-option
+          >
+        </ng-container>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-card-subtitle>Select your Vegetable Topping</mat-card-subtitle>
+    <mat-form-field appearance="fill">
+      <mat-label>Select Topping 3</mat-label>
+      <mat-select formControlName="option3" required>
+        <ng-container *ngFor="let topping of toppings; let i = index">
+          <mat-option
+            value="{{ topping.id }}"
+            *ngIf="topping.topping_type_id === 3"
+            >{{ topping.name }}</mat-option
+          >
+        </ng-container>
+      </mat-select>
+    </mat-form-field>
+    <br />
+    <button
+      mat-raised-button
+      color="primary"
+      [disabled]="!orderForm.valid"
+      (click)="order()"
+    >
+      Submit
+    </button>
+  </ng-form>
+</mat-card>

@@ -1,0 +1,39 @@
+.container,
+.menu-bar,
+.login-buttons {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: baseline;
+}
+.container {
+  grid-template-columns: 70% 30%;
+  padding-bottom: 100px;
+}
+
+.menu-bar {
+  list-style-type: none;
+}
+.menu-bar li > a {
+  text-decoration: none;
+  color: inherit;
+}
+.login,
+.user-info {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.user-info,
+.login-buttons {
+  column-gap: 20px;
+}
+/* .login-buttons > * {
+  height: 35px;
+  width: 70px;
+} */
+.user-icon {
+  width: 40px;
+  height: 40px;
+  background-color: lightgray;
+  border-radius: 50%;
+}

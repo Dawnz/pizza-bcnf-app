@@ -1,0 +1,28 @@
+<mat-card class="signup-page">
+  <mat-card-title>Signup</mat-card-title>
+  <mat-card-content class="signup-wrapper">
+    <form class="signup-form" [formGroup]="signupForm">
+      <mat-form-field>
+        <input
+          matInput
+          type="username"
+          placeholder="Username"
+          formControlName="username"
+        />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input
+          matInput
+          type="password"
+          placeholder="Password"
+          formControlName="password"
+        />
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" (click)="signup()">
+        Sign up
+      </button>
+    </form>
+  </mat-card-content>
+</mat-card>
